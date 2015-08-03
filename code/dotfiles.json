@@ -1,0 +1,8 @@
+{
+	"files": [
+		{
+			"name": "settings.json",
+			"symlink": "~/.config/Code/User/settings.json"
+		}
+	]
+}

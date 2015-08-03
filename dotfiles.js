@@ -23,6 +23,13 @@ function fixPath(path) {
 	}
 }
 
+function ensureDirectory(path) {
+	var dir = p.dirname(path);
+	try {
+		fs.mkdirSync(dir);
+	} catch(e) {} // Already exists
+}
+
 function escapeShell(cmd) {
 	return '"' + cmd.replace(/(["\s'$`\\])/g,'\\$1') + '"';
 };
@@ -33,6 +40,7 @@ function doFiles(file, files)
 		var f = files[i];
 		var name = fixPath(file + '/' + f['name']);
 		var symlink = fixPath(f['symlink']);
+		ensureDirectory(symlink);
 		try {
 			var fd = fs.openSync(symlink, 'r');
 			fs.closeSync(fd);
@@ -57,12 +65,11 @@ function doGit(file, gits) {
 		var repo = gits[i];
 		var url = repo['url'];
 		var destination = fixPath(repo['destination']);
-		
+		ensureDirectory(destination);
 		try {
 			var dir = fs.readdirSync(destination);
 			cp.execSync('git pull', {stdio: [0,1,2], cwd: destination});
 		} catch(e) { // Doesn't yet exist
-			console.log(e);
 			cp.execSync('git clone ' + url + ' ' + destination, {stdio: [0,1,2]});
 		}
 	}
