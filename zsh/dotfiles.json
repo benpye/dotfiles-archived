@@ -1,0 +1,14 @@
+{
+	"files": [
+		{
+			"name": ".zshrc",
+			"symlink": "~/.zshrc"
+		}
+	],
+	"git": [
+		{
+			"url": "https://github.com/zsh-users/antigen.git",
+			"destination": "~/antigen"
+		}
+	]
+}

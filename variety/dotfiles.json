@@ -1,0 +1,12 @@
+{
+	"files": [
+		{
+			"name": "ui.conf",
+			"symlink": "~/.config/variety/ui.conf"
+		},
+		{
+			"name": "variety.conf",
+			"symlink": "~/.config/variety/variety.conf"
+		}
+	]
+}

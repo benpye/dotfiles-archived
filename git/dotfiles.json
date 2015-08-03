@@ -1,0 +1,8 @@
+{
+	"files": [
+		{
+			"name": ".gitconfig",
+			"symlink": "~/.gitconfig"
+		}
+	]
+}
