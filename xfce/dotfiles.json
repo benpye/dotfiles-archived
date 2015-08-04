@@ -1,0 +1,16 @@
+{
+	"files": [
+		{
+			"name": "terminalrc",
+			"symlink": "~/.config/xfce4/terminal/terminalrc"
+		},
+		{
+			"name": "xfwm4.xml",
+			"symlink": "~/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml"
+		},
+		{
+			"name": "xsettings.xml",
+			"symlink": "~/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml"
+		}
+	]
+}
